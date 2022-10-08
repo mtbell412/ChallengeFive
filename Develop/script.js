@@ -36,7 +36,7 @@ var min = parseInt(moment().format("mm"));
 var sec = parseInt(moment().format("ss"));
 
 
-
+//list of conditionals to change the colors based on time
 if(hour<9){
     $('#input9').addClass('future');
     $('#input10').addClass('future'); 
@@ -136,7 +136,7 @@ if(hour<9){
 
 
 
-
+//if there is something that exists in the storage it will stay there on reload
 if (plans9 !== null) {
     $("#input9").html(plans9);
 } if(plans10 !== null){
@@ -158,7 +158,7 @@ if (plans9 !== null) {
 }
 
 
-
+//set of functions per row to when button is clicked it pulls the input value then records it back to the page and local storage.
 function scheduleInput9(event){
   event.preventDefault();
   var plans = $("#input9").val();
