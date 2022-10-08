@@ -24,6 +24,117 @@ var plans3 = JSON.parse(localStorage.getItem("3pm"));
 var plans4 = JSON.parse(localStorage.getItem("4pm"));
 var plans5 = JSON.parse(localStorage.getItem("5pm"));
 
+var month = moment().format('MM');
+var day = moment().format("DD");
+var year = moment().format("YYYY");
+// test variables to test conditions
+// var hour = 11;
+// var min  = 00;
+// var sec = 00;
+var hour = parseInt(moment().format("HH"));
+var min = parseInt(moment().format("mm"));
+var sec = parseInt(moment().format("ss"));
+
+
+
+if(hour<9){
+    $('#input9').addClass('future');
+    $('#input10').addClass('future'); 
+    $('#input11').addClass('future'); 
+    $('#input12').addClass('future'); 
+    $('#input1').addClass('future'); 
+    $('#input2').addClass('future'); 
+    $('#input3').addClass('future'); 
+    $('#input4').addClass('future');
+    $('#input5').addClass('future');  
+} if (hour >= 9 && min <=60  && sec<=60){
+    $('#input9').addClass('present');
+    $('#input9').removeClass('future');
+    $('#input10').addClass('future'); 
+    $('#input11').addClass('future'); 
+    $('#input12').addClass('future'); 
+    $('#input1').addClass('future'); 
+    $('#input2').addClass('future'); 
+    $('#input3').addClass('future'); 
+    $('#input4').addClass('future');
+    $('#input5').addClass('future');  
+} if(hour >= 10 && min <=60  && sec<=60){
+    $('#input9').removeClass('present');
+    $('#input9').addClass('past');
+    $('#input10').addClass('present');
+    $('#input10').removeClass('future');
+    $('#input11').addClass('future'); 
+    $('#input12').addClass('future'); 
+    $('#input1').addClass('future'); 
+    $('#input2').addClass('future'); 
+    $('#input3').addClass('future'); 
+    $('#input4').addClass('future');
+    $('#input5').addClass('future');  
+} if(hour >= 11 && min <=60  && sec<=60){
+    $('#input10').addClass('past');
+    $('#input10').removeClass('present');
+    $('#input11').addClass('present'); 
+    $('#input11').removeClass('future'); 
+    $('#input12').addClass('future'); 
+    $('#input1').addClass('future'); 
+    $('#input2').addClass('future'); 
+    $('#input3').addClass('future'); 
+    $('#input4').addClass('future');
+    $('#input5').addClass('future');  
+} if(hour >= 12 && min <=60  && sec<=60){
+    $('#input11').addClass('past');
+    $('#input11').removeClass('present');
+    $('#input12').addClass('present'); 
+    $('#input12').removeClass('future');  
+    $('#input1').addClass('future'); 
+    $('#input2').addClass('future'); 
+    $('#input3').addClass('future'); 
+    $('#input4').addClass('future');
+    $('#input5').addClass('future'); 
+} if(hour >= 13 && min <=60  && sec<=60){
+    $('#input12').addClass('past');
+    $('#input12').removeClass('present');
+    $('#input1').addClass('present'); 
+    $('#input1').removeClass('future');  
+    $('#input2').addClass('future'); 
+    $('#input3').addClass('future'); 
+    $('#input4').addClass('future');
+    $('#input5').addClass('future');
+} if(hour >= 14 && min <=60  && sec<=60){
+    $('#input1').addClass('past');
+    $('#input1').removeClass('present');
+    $('#input2').addClass('present'); 
+    $('#input2').removeClass('future');  
+    $('#input3').addClass('future'); 
+    $('#input4').addClass('future');
+    $('#input5').addClass('future');
+} if(hour >= 15 && min <=60  && sec<=60){
+    $('#input2').addClass('past');
+    $('#input2').removeClass('present');
+    $('#input3').addClass('present'); 
+    $('#input3').removeClass('future');  
+    $('#input4').addClass('future');
+    $('#input5').addClass('future');
+
+} if(hour >= 16 && min <=60  && sec<=60){
+    $('#input3').addClass('past');
+    $('#input3').removeClass('present');
+    $('#input4').addClass('present'); 
+    $('#input4').removeClass('future');  
+    $('#input5').addClass('future');
+
+} if(hour >= 17 && min <=60  && sec<=60){
+    $('#input4').addClass('past');
+    $('#input4').removeClass('present');
+    $('#input5').addClass('present'); 
+    $('#input5').removeClass('future');  
+} if(hour >= 18 && min <=60  && sec<=60){
+    $('#input5').addClass('past');
+    $('#input5').removeClass('present'); 
+}
+
+
+
 
 
 if (plans9 !== null) {
